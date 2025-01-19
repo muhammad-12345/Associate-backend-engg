@@ -19,9 +19,11 @@ const Workshop = {
         if (!doc.exists) throw new Error('Workshop not found');
         return { id: doc.id, ...doc.data() };
     },
+
     update: async (id, data) => {
         await db.collection('workshops').doc(id).update(data);
     },
+    
     delete: async (id) => {
         await db.collection('workshops').doc(id).delete();
     },

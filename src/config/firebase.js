@@ -1,5 +1,6 @@
 const admin = require('firebase-admin');
 const dotenv = require('dotenv');
+// const serviceAccount = require('./serviceAccountKey.json');
 dotenv.config();
 
 const serviceAccount = require('../config/workshop-management-faa1e-firebase-adminsdk-fbsvc-177ce492d3.json'); // Add your Firebase service account JSON file
