@@ -10,6 +10,8 @@ router.post('/', verifyToken, authorizeRole('mentor'), workshopController.create
 router.put('/:id', verifyToken, authorizeRole('mentor'), workshopController.updateWorkshop);
 router.delete('/:id', verifyToken, authorizeRole('mentor'), workshopController.deleteWorkshop);
 router.get('/:id', verifyToken, workshopController.getWorkshopById);
+router.post('/:id/enroll', verifyToken, workshopController.enrollLearner);
+router.get('learners/:learnerId/enrollments', verifyToken, workshopController.getLearnerEnrollments);
 
 
 module.exports = router; 

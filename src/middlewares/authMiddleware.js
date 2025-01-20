@@ -9,9 +9,14 @@ const verifyToken = async (req, res, next) => {
     const token = authHeader.split(' ')[1];
     try {
         const decodedToken = await admin.auth().verifyIdToken(token);
-        req.user = decodedToken; // attach info to the req
+        // console.log('Decoded Token:', decodedToken); // Debugging decoded token
+        console.log('Workshop ID:', req.params.id);
+        console.log('Learner Details:', req.body);
+
+        req.user = decodedToken; // Attach user info (UID) to the request
         next();
     } catch (error) {
+        console.error('Error verifying token:', error); // Debugging token verification errors
         res.status(403).json({ message: 'Invalid or expired token' });
     }
 };

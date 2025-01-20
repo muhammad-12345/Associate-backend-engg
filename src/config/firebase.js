@@ -11,4 +11,5 @@ admin.initializeApp({
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 });
 
+
 module.exports = admin;
